@@ -18,14 +18,12 @@ platform :ios do
 
   desc "Runs all the tests"
   lane :test do
-    # gym
     scan(scheme: "CocoaTalksCI", device:  "iPhone 5s")
-    # xcov(scheme: "CocoaTalksCI", minimum_coverage_percentage: 20.0)
   end
 
   desc "Run all lanes"
   lane :all do
-    # clean
+    clean
     lint
     test
   end
