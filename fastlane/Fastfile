@@ -1,0 +1,33 @@
+fastlane_version "2.54.3"
+
+default_platform :ios
+
+platform :ios do
+
+  desc "Clean builds, simulators"
+  lane :clean do
+    reset_simulators
+    xcclean
+    clean_build_artifacts
+  end
+
+  desc "Run lint on the code"
+  lane :lint do
+    swiftlint
+  end
+
+  desc "Runs all the tests"
+  lane :test do
+    gym(scheme: "CocoaTalksCI", skip_package_ipa: true)
+    scan(scheme: "CocoaTalksCI", device:  "iPhone 5s")
+    xcov(scheme: "CocoaTalksCI", minimum_coverage_percentage: 20.0)
+  end
+
+  desc "Run all lanes"
+  lane :all do
+    # clean
+    lint
+    test
+  end
+
+end
