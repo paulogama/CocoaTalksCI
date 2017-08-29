@@ -18,6 +18,7 @@ platform :ios do
 
   desc "Runs all the tests"
   lane :test do
+		sigh
     gym(scheme: "CocoaTalksCI", skip_package_ipa: true, configuration: "Debug")
     scan(scheme: "CocoaTalksCI", device:  "iPhone 5s")
     xcov(scheme: "CocoaTalksCI", minimum_coverage_percentage: 20.0)
