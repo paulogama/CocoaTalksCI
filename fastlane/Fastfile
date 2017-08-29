@@ -18,9 +18,9 @@ platform :ios do
 
   desc "Runs all the tests"
   lane :test do
-    gym(scheme: "CocoaTalksCI", skip_package_ipa: true, configuration: "Debug", silent: true)
+    # gym
     scan(scheme: "CocoaTalksCI", device:  "iPhone 5s")
-    xcov(scheme: "CocoaTalksCI", minimum_coverage_percentage: 20.0)
+    # xcov(scheme: "CocoaTalksCI", minimum_coverage_percentage: 20.0)
   end
 
   desc "Run all lanes"
