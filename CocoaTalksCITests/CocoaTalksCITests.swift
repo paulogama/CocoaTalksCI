@@ -20,11 +20,11 @@ class CocoaTalksCITests: XCTestCase {
     }
 
     func testExample() {
+        
     }
 
     func testPerformanceExample() {
         self.measure {
         }
     }
-
 }

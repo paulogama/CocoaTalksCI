@@ -22,5 +22,4 @@ class CocoaTalksCIUITests: XCTestCase {
 
     func testExample() {
     }
-
 }

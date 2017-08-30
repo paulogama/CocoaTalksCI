@@ -23,7 +23,7 @@ platform :ios do
 
   desc "Run all lanes"
   lane :all do
-    clean
+    # clean
     lint
     test
   end
